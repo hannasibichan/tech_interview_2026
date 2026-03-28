@@ -1,31 +1,143 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FOSS Club Events</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FOSS Club – Upcoming tech events, workshops, and hackathons for students." />
+  <title>FOSS Club | Tech Events 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-
   <header>
-    <h1>FOSS Club</h1>
+    <div class="logo">
+      <img src="FOSS.png" alt="FOSS Club logo" class="logo-icon" />
+      <span class="logo-text">FOSS Club</span>
+    </div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Events</a>
-      <a href="#">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
-
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Tech Events &amp; Workshops 2026</h1>
+      <p>Explore, learn, and grow with hands-on events run by the FOSS Club community.</p>
+      <a href="#events" class="hero-btn">Browse Events</a>
+    </div>
+  </section>
+  <section class="events" id="events">
     <h2>Upcoming Events</h2>
-
-
+    <p class="section-subtitle">Register early – seats are limited!</p>
+    <div class="cards-grid">
       <div class="card">
-        <h3>GIT HUB Basics</h3>
-        <p class="date">April 10, 2026</p>
-        <p>Learn basics of GIT HUB</p>
-        <button>Register</button>
+        <img src="github.jpg" alt="GitHub Basics workshop" class="card-img" />
+        <div class="card-body">
+          <span class="card-tag">Workshop</span>
+          <h3>GitHub Basics</h3>
+          <p class="date">📅 April 10, 2026</p>
+          <p>Learn version control, branching, pull requests, and collaboration workflows on GitHub from scratch.</p>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
       </div>
-
+      <div class="card">
+        <img src="python.jpg" alt="Python Programming workshop" class="card-img" />
+        <div class="card-body">
+          <span class="card-tag">Workshop</span>
+          <h3>Python for Beginners</h3>
+          <p class="date">📅 April 18, 2026</p>
+          <p>Get started with Python – variables, loops, functions, and mini-projects in a guided session.</p>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="web.jpg" alt="Web Development bootcamp" class="card-img" />
+        <div class="card-body">
+          <span class="card-tag">Bootcamp</span>
+          <h3>Web Dev Bootcamp</h3>
+          <p class="date">📅 April 25, 2026</p>
+          <p>Build responsive websites using HTML, CSS, and JavaScript with real-world project practice.</p>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="hackathon.jpeg" alt="Open Source Hackathon" class="card-img" />
+        <div class="card-body">
+          <span class="card-tag">Hackathon</span>
+          <h3>Open Source Sprint</h3>
+          <p class="date">📅 May 3, 2026</p>
+          <p>Contribute to real open-source projects, earn badges, and get mentored by experienced developers.</p>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="linux.jpeg" alt="Linux and Terminal Basics" class="card-img" />
+        <div class="card-body">
+          <span class="card-tag">Workshop</span>
+          <h3>Linux &amp; Terminal Basics</h3>
+          <p class="date">📅 May 10, 2026</p>
+          <p>Master the command line – file navigation, shell scripting, permissions, and developer tools on Linux.</p>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h2>Get in Touch</h2>
+      <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>fossclub@lbsitw.ac.in</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <p>LBS Institute of Technology for Women, Thiruvananthapuram</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🌐</span>
+            <div>
+              <strong>GitHub</strong>
+              <p><a href="https://github.com/FOSSCLUB-LBSITW" target="_blank">github.com/FOSSCLUB-LBSITW</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🐦</span>
+            <div>
+              <strong>Social</strong>
+              <p>@FOSSClub_LBSITW</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Daniel Issac" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2026 FOSS Club – LBS Institute of Technology for Women. All rights reserved.</p>
+  </footer>
 </body>
 </html>
