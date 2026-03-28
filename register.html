@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,9 +14,12 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1d3a5f 100%);
+      background:
+        radial-gradient(ellipse 80% 55% at 50% -10%, rgba(59, 130, 246, 0.22) 0%, transparent 65%),
+        linear-gradient(160deg, #080e1b 0%, #0f172a 55%, #0d1f40 100%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -25,61 +29,126 @@
       text-align: center;
       padding: 20px;
     }
-    .badge {
-      font-size: 4rem;
-      margin-bottom: 20px;
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(99, 102, 241, 0.08) 0%, transparent 35%);
+      pointer-events: none;
     }
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-      background: linear-gradient(90deg, #60a5fa, #93c5fd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 52px 56px 48px;
+      max-width: 480px;
+      width: 100%;
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 0 0 1px rgba(59, 130, 246, 0.08),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 80px rgba(59, 130, 246, 0.06);
+      animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
-    p {
-      font-size: 1.05rem;
-      color: #94a3b8;
-      max-width: 420px;
-      margin: 0 auto 32px;
-    }
-    .back-btn {
-      display: inline-block;
-      background-color: #3b82f6;
-      color: white;
-      padding: 11px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .back-btn:hover {
-      background-color: #2563eb;
-      transform: translateY(-2px);
-    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(28px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    .container {
-      animation: fadeInUp 0.8s ease-out forwards;
+
+    .badge {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: pulse 2.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.5));
     }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.4));
+      }
+
+      50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 26px rgba(99, 102, 241, 0.6));
+      }
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+      line-height: 1.15;
+      background: linear-gradient(90deg, #e2e8f0 20%, #93c5fd 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #64748b;
+      max-width: 360px;
+      margin: 0 auto 34px;
+      line-height: 1.6;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(59, 130, 246, 0.38);
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(59, 130, 246, 0.55);
+    }
+
     footer {
       position: absolute;
-      bottom: 16px;
-      font-size: 0.8rem;
-      color: #475569;
+      bottom: 20px;
+      font-size: 0.78rem;
+      color: #334155;
+      letter-spacing: 0.2px;
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        padding: 40px 28px 36px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="badge">🚀</div>
@@ -89,4 +158,5 @@
   </div>
   <footer>© 2026 FOSS Club – LBS Institute of Technology for Women</footer>
 </body>
+
 </html>
