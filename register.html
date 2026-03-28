@@ -59,6 +59,19 @@
       background-color: #2563eb;
       transform: translateY(-2px);
     }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .container {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
     footer {
       position: absolute;
       bottom: 16px;
@@ -68,10 +81,12 @@
   </style>
 </head>
 <body>
-  <div class="badge">🚀</div>
-  <h1>Registrations Opening Soon!</h1>
-  <p>We're working hard to set things up. Check back shortly — exciting events are coming your way!</p>
-  <a href="index.html" class="back-btn">← Back to Events</a>
+  <div class="container">
+    <div class="badge">🚀</div>
+    <h1>Registrations Opening Soon!</h1>
+    <p>We're working hard to set things up. Check back shortly — exciting events are coming your way!</p>
+    <a href="index.html" class="back-btn">← Back to Events</a>
+  </div>
   <footer>© 2026 FOSS Club – LBS Institute of Technology for Women</footer>
 </body>
 </html>

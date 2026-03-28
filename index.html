@@ -32,7 +32,7 @@
     <h2>Upcoming Events</h2>
     <p class="section-subtitle">Register early – seats are limited!</p>
     <div class="cards-grid">
-      <div class="card">
+      <div class="card reveal">
         <img src="github.jpg" alt="GitHub Basics workshop" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Workshop</span>
@@ -42,7 +42,7 @@
           <a href="register.html" class="register-btn">Register Now</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <img src="python.jpg" alt="Python Programming workshop" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Workshop</span>
@@ -52,7 +52,7 @@
           <a href="register.html" class="register-btn">Register Now</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <img src="web.jpg" alt="Web Development bootcamp" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Bootcamp</span>
@@ -62,7 +62,7 @@
           <a href="register.html" class="register-btn">Register Now</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <img src="hackathon.jpeg" alt="Open Source Hackathon" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Hackathon</span>
@@ -72,7 +72,7 @@
           <a href="register.html" class="register-btn">Register Now</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <img src="linux.jpeg" alt="Linux and Terminal Basics" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Workshop</span>
@@ -85,7 +85,7 @@
     </div>
   </section>
   <section class="contact" id="contact">
-    <div class="contact-container">
+    <div class="contact-container reveal">
       <h2>Get in Touch</h2>
       <p class="section-subtitle">Have questions? We'd love to hear from you.</p>
       <div class="contact-grid">
@@ -141,7 +141,6 @@
     <p>© 2026 FOSS Club – LBS Institute of Technology for Women. All rights reserved.</p>
   </footer>
 <script>
-  // Smooth scroll with sticky-header offset
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const target = document.querySelector(link.getAttribute('href'));
@@ -151,6 +150,20 @@
       const top = target.getBoundingClientRect().top + window.scrollY - headerH;
       window.scrollTo({ top, behavior: 'smooth' });
     });
+  });
+  const observerOptions = {
+    threshold: 0.15
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
   });
 </script>
 </body>
