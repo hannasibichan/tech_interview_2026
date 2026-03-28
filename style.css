@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 *,
 *::before,
 *::after {
@@ -90,6 +93,7 @@ nav a:hover {
 }
 section {
   padding: 60px 40px;
+  scroll-margin-top: 68px; /* height of sticky header */
 }
 h2 {
   text-align: center;

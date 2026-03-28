@@ -7,6 +7,7 @@
   <title>FOSS Club | Tech Events 2026</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="FOSS.png" />
 </head>
 <body>
   <header>
@@ -32,7 +33,7 @@
     <p class="section-subtitle">Register early – seats are limited!</p>
     <div class="cards-grid">
       <div class="card">
-        <img src="github.jpg" alt="GitHub Basics workshop" class="card-img" />
+        <img src="github.jpg" alt="GitHub Basics workshop" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Workshop</span>
           <h3>GitHub Basics</h3>
@@ -42,7 +43,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="python.jpg" alt="Python Programming workshop" class="card-img" />
+        <img src="python.jpg" alt="Python Programming workshop" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Workshop</span>
           <h3>Python for Beginners</h3>
@@ -52,7 +53,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="web.jpg" alt="Web Development bootcamp" class="card-img" />
+        <img src="web.jpg" alt="Web Development bootcamp" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Bootcamp</span>
           <h3>Web Dev Bootcamp</h3>
@@ -62,7 +63,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="hackathon.jpeg" alt="Open Source Hackathon" class="card-img" />
+        <img src="hackathon.jpeg" alt="Open Source Hackathon" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Hackathon</span>
           <h3>Open Source Sprint</h3>
@@ -72,7 +73,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="linux.jpeg" alt="Linux and Terminal Basics" class="card-img" />
+        <img src="linux.jpeg" alt="Linux and Terminal Basics" class="card-img" loading="lazy" decoding="async" />
         <div class="card-body">
           <span class="card-tag">Workshop</span>
           <h3>Linux &amp; Terminal Basics</h3>
@@ -139,5 +140,18 @@
   <footer>
     <p>© 2026 FOSS Club – LBS Institute of Technology for Women. All rights reserved.</p>
   </footer>
+<script>
+  // Smooth scroll with sticky-header offset
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const headerH = document.querySelector('header').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerH;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
